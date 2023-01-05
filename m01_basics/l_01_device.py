@@ -1,10 +1,27 @@
-names = ["anay", "anu", "vinu", "vinayak", "chimnu"]
-persons = [{"name": "anu", "location": "pune", "handsome": True, "intelligent": "maybe"},
-           {"name": "vinu", "location": "indore", "handsome": False, "intelligent": "maybenot"},
-           {"name": "anay", "location": "sfo", "handsome": True, "intelligent": "maybe"}]
+from pprint import pprint
 
-for name in names:
-    print(f"the current name is: {name}")
+#Dictionary representing a device
 
-for person in persons:
-    print(f"the current person is: {person}")
+device = {
+    "name": "sbx-n9kv-ao",
+    "vendor": "cisco",
+    "model": "Nexus9000 C9308v Chassis",
+    "os": "nxos",
+    "version": "9.3(3)",
+    "ip": "10.1.1.1",
+}
+
+# SIMPLE PRINT
+print("\n_____ SIMPLE PRINT _____________")
+print("device:",  device)
+print("device name: ", device["name"])
+
+# PRETTY PRINT
+print("\n_____ PRETTY PRINT __________")
+pprint(device)
+
+# FOR LOOP, NICELY FORMATTED PRINT
+
+print("\n_____ FOR LOOP, USING F-STRING __________")
+for key, value in device.items():
+    print(f"{key:>16s} : {value}")
